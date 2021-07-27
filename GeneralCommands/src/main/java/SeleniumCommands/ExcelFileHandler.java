@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFileHandler {
 	
-	public Object[][] ReadExcelFile(String filePath,String fileName,String sheetName) throws IOException{
+public Object[][] ReadExcelFile(String filePath,String fileName,String sheetName) throws IOException{
 		String[][] exceldata = null;
 		FileInputStream fi=new FileInputStream(filePath+fileName);
 		XSSFWorkbook wb=new XSSFWorkbook(fi);
@@ -27,6 +27,7 @@ public class ExcelFileHandler {
 				exceldata[i-1][j]=c.getStringCellValue();				
 			}
 		}
+		wb.close();
 		return exceldata;
 		
 	}

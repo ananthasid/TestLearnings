@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-27T18:34:03Z" name="SeleniumCommands.BrowserTest" finished-at="2021-07-27T18:34:24Z" duration-ms="21160">
+  <suite started-at="2021-07-27T21:50:51Z" name="SeleniumCommands.BrowserTest" finished-at="2021-07-27T21:51:14Z" duration-ms="22699">
     <groups>
     </groups>
-    <test started-at="2021-07-27T18:34:03Z" name="Command line test" finished-at="2021-07-27T18:34:24Z" duration-ms="21160">
+    <test started-at="2021-07-27T21:50:51Z" name="Command line test" finished-at="2021-07-27T21:51:14Z" duration-ms="22699">
       <class name="SeleniumCommands.BrowserTest">
-        <test-method is-config="true" signature="LoadDetails()[pri:0, instance:SeleniumCommands.BrowserTest@3c407114]" started-at="2021-07-27T18:34:03Z" name="LoadDetails" finished-at="2021-07-27T18:34:06Z" duration-ms="2456" status="PASS">
+        <test-method is-config="true" signature="LoadDetails()[pri:0, instance:SeleniumCommands.BrowserTest@188715b5]" started-at="2021-07-27T21:50:51Z" name="LoadDetails" finished-at="2021-07-27T21:50:54Z" duration-ms="3103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoadDetails -->
-        <test-method signature="PracticeForm()[pri:0, instance:SeleniumCommands.BrowserTest@3c407114]" started-at="2021-07-27T18:34:06Z" name="PracticeForm" finished-at="2021-07-27T18:34:20Z" duration-ms="14516" status="PASS">
+        <test-method signature="PracticeForm()[pri:0, instance:SeleniumCommands.BrowserTest@188715b5]" started-at="2021-07-27T21:50:54Z" name="PracticeForm" finished-at="2021-07-27T21:51:09Z" duration-ms="15215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PracticeForm -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:SeleniumCommands.BrowserTest@3c407114]" started-at="2021-07-27T18:34:20Z" name="CloseBrowser" finished-at="2021-07-27T18:34:24Z" duration-ms="4168" status="PASS">
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:SeleniumCommands.BrowserTest@188715b5]" started-at="2021-07-27T21:51:09Z" name="CloseBrowser" finished-at="2021-07-27T21:51:14Z" duration-ms="4365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
