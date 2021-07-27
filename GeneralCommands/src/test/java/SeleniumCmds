@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="SeleniumCommands.BrowserTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,4 @@
+SeleniumCommands\BrowserInit.class
+SeleniumCommands\FormLocator.class
+SeleniumCommands\ExcelFileHandler.class
+SeleniumCommands\ObjectRepository.class
