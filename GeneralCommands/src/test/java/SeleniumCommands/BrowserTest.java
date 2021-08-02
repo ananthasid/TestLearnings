@@ -27,10 +27,8 @@ public class BrowserTest extends BrowserInit {
 	  String _propFile=_filepath+_propertFile;
 	  ObjectRepository _repos=new ObjectRepository();
 	  prop=_repos.ReadProperties(_propFile);
-	  BrowserInitialize(prop.getProperty("url"));
-	  report=new ExtentReports(_filepath+"report.html");
-	  test=report.startTest("PracticeForm", "Test the Practice form which includes all types of elements");
-	  test.log(LogStatus.INFO, "Starting the Test...");
+	 
+	 
   }
   
   @DataProvider(name="Browserkeywords")
@@ -38,22 +36,52 @@ public class BrowserTest extends BrowserInit {
 	  ExcelFileHandler _excelhandler=new ExcelFileHandler();
 	  return _excelhandler.ReadExcelFile(_filepath, _excelFileName, "Sheet1");
   }
-	
- /* @Test(dataProvider="Browserkeywords" )
-  public void BrowserCommands(String Keyword, String Propname) throws IOException {
-	
-  }*/
   
-  @Test
+  @Test(enabled = false)
   public void PracticeForm() throws InterruptedException, AWTException, IOException {
+	  BrowserInitialize(prop.getProperty("url"));
+	  report=new ExtentReports(_filepath+"report.html");
+	  test=report.startTest("PracticeForm", "Test the Practice form which includes all types of elements");
+	  test.log(LogStatus.INFO, "Starting the Test...");
 	  FormLocator locator=new FormLocator(d,test);
 	  locator.PracticeFormSubmit();
   }
+  
+  @Test(enabled=false)
+  public void AlertForm() throws Throwable {
+	  BrowserInitialize("https://demoqa.com/alerts");
+	  report=new ExtentReports(_filepath+"alertreport.html");
+	  test=report.startTest("Alert Page", "Test the Alerts");
+	  test.log(LogStatus.INFO, "Starting the Test...");
+	  AlertLocator alrtloc=new AlertLocator(d, test);
+	  alrtloc.AlertPageTesting();
+  }
+  
+  @Test 
+  public void TestBrowserWindow() throws InterruptedException {
+	  BrowserInitialize("https://demoqa.com/browser-windows");
+	  report=new ExtentReports(_filepath+"bwreport.html");
+	  test=report.startTest("Browser Window Page", "Test the Browser Window Page");
+	  test.log(LogStatus.INFO, "Starting the Test...");
+	  BrowserWindow win=new BrowserWindow(d, test);
+	  win.TestBrowserWindow();
+  }
+  
+  @Test 
+  public void TestFrames() throws InterruptedException {
+	  BrowserInitialize(" https://demoqa.com/frames");
+	  //report=new ExtentReports(_filepath+"bwreport.html");
+	 // test=report.startTest("Frames Page", "Test the Frame Page");
+	  test.log(LogStatus.INFO, "Starting the Frame Test...");
+	  BrowserWindow win=new BrowserWindow(d, test);
+	  win.TestFrames();
+  }
+   
   @AfterTest
   public void CloseBrowser() {
 	  test.log(LogStatus.INFO, "Closing the Test...");	 
 	  report.endTest(test);
 	  report.flush(); 
-	  d.close();
+	  d.quit();
   }
 }

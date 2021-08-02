@@ -1,6 +1,5 @@
 package SeleniumCommands;
 
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -9,7 +8,6 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -42,7 +40,8 @@ public class FormLocator {
 	@FindBy(id ="react-select-3-input") WebElement state;
 	@FindBy(id ="react-select-4-input") WebElement city;
 	@FindBy(className ="form-file") WebElement upload;
-	@FindBy(id="submit") WebElement submit;
+	@FindBy(id="submiit") WebElement submit;
+	
 	public FormLocator(WebDriver d, ExtentTest test) {
 		PageFactory.initElements(d, this);
 		drive=d;
@@ -105,8 +104,10 @@ public class FormLocator {
 		rb.delay(259);
 		rb.keyPress(KeyEvent.VK_CONTROL);
 		rb.keyPress(KeyEvent.VK_V);
-		rb.keyRelease(KeyEvent.VK_V);
-		rb.keyRelease(KeyEvent.VK_CONTROL);		
+				
+	    rb.keyRelease(KeyEvent.VK_CONTROL);
+	    rb.keyRelease(KeyEvent.VK_V);
+		
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.delay(300);
 		rb.keyRelease(KeyEvent.VK_ENTER);
@@ -125,52 +126,58 @@ public class FormLocator {
 	}
 	
 	public void PracticeFormSubmit() throws InterruptedException, AWTException, IOException {
-		fname.sendKeys("Ani");
-		Thread.sleep(600);
-		t.log(LogStatus.PASS, "Entered First Name:- Ani");
-		lname.sendKeys("Suresh");
-		Thread.sleep(600);
-		t.log(LogStatus.PASS, "Entered Last Name:- Suresh");
-		email.sendKeys("ani@gmail.com");
-		Thread.sleep(600);
-		t.log(LogStatus.PASS, "Entered Email:- ani@gmail.com");
-		SelectRadio(2);
-		Thread.sleep(600);
-		mobile.sendKeys("08870654980");
-		Thread.sleep(600);
-		t.log(LogStatus.PASS, "Entered Mobile:- 08870654980");
-		birthdate.click();
-		SelectOPtions("react-datepicker__month-select", "November");
-		SelectOPtions("react-datepicker__year-select","1981");
-		SelectElement("react-datepicker__day","8");
-		t.log(LogStatus.PASS, "Selected Birth Date:- 8 November 1981");
-		Thread.sleep(600);
-		int[] ind= {1,2};
-		SelectCheck(ind);
-		Thread.sleep(600);
-		ScrolltoBottomPage();
-		address.sendKeys("Flat 157, Rochester Row, London");
-		t.log(LogStatus.PASS, "Entered Address:- Flat 157, Rochester Row, London");
-		Thread.sleep(600);
-		state.sendKeys("NCR");
-	    state.sendKeys(Keys.ENTER);
-	    t.log(LogStatus.PASS, "Entered State:- NCR");
-	    city.sendKeys("Noida");
-	    city.sendKeys(Keys.ENTER);
-	    t.log(LogStatus.PASS, "Entered State:- Noida");
-		Thread.sleep(600);
-		//WebDriverWait wait1 = new WebDriverWait(drive, 10);
-		//WebElement element1 = wait1.until(ExpectedConditions.elementToBeClickable(subject));
-		//element1.click();
-		UploadFile("E:\\Ananthi\\i.png");
-		t.log(LogStatus.PASS, "Uploaded file:- E:\\\\Ananthi\\\\i.png");
-		Thread.sleep(600);
-		subject.sendKeys("Welcome Bala Sid");
-		t.log(LogStatus.PASS, "Entered Subject:- Welcome Bala Sid");
-		submit.click();
-		t.log(LogStatus.PASS, "Successfully submitted the form");
-		TakeScreenShot();
-		t.log(LogStatus.PASS, "Taken a screenshot and saved as pf.png");
-		Thread.sleep(3000);			
+		try 
+		{
+			fname.sendKeys("Ani");
+			Thread.sleep(600);
+			t.log(LogStatus.PASS, "Entered First Name:- Ani");
+			lname.sendKeys("Suresh");
+			Thread.sleep(600);
+			t.log(LogStatus.PASS, "Entered Last Name:- Suresh");
+			email.sendKeys("ani@gmail.com");
+			Thread.sleep(600);
+			t.log(LogStatus.PASS, "Entered Email:- ani@gmail.com");
+			SelectRadio(2);
+			Thread.sleep(600);
+			mobile.sendKeys("08870654980");
+			Thread.sleep(600);
+			t.log(LogStatus.PASS, "Entered Mobile:- 08870654980");
+			birthdate.click();
+			SelectOPtions("react-datepicker__month-select", "November");
+			SelectOPtions("react-datepicker__year-select","1981");
+			SelectElement("react-datepicker__day","8");
+			t.log(LogStatus.PASS, "Selected Birth Date:- 8 November 1981");
+			Thread.sleep(600);
+			int[] ind= {1,2};
+			SelectCheck(ind);
+			Thread.sleep(600);
+			ScrolltoBottomPage();
+			address.sendKeys("Flat 157, Rochester Row, London");
+			t.log(LogStatus.PASS, "Entered Address:- Flat 157, Rochester Row, London");
+			Thread.sleep(600);
+			state.sendKeys("NCR");
+		    state.sendKeys(Keys.ENTER);
+		    t.log(LogStatus.PASS, "Entered State:- NCR");
+		    city.sendKeys("Noida");
+		    city.sendKeys(Keys.ENTER);
+		    t.log(LogStatus.PASS, "Entered State:- Noida");
+			Thread.sleep(600);
+			//WebDriverWait wait1 = new WebDriverWait(drive, 10);
+			//WebElement element1 = wait1.until(ExpectedConditions.elementToBeClickable(subject));
+			//element1.click();
+			UploadFile("E:\\Ananthi\\i.png");
+			t.log(LogStatus.PASS, "Uploaded file:- E:\\\\Ananthi\\\\i.png");
+			Thread.sleep(600);
+			subject.sendKeys("Welcome Bala Sid");
+			t.log(LogStatus.PASS, "Entered Subject:- Welcome Bala Sid");
+			submit.click();
+			t.log(LogStatus.PASS, "Successfully submitted the form");
+			TakeScreenShot();
+			t.log(LogStatus.PASS, "Taken a screenshot and saved as pf.png");
+			Thread.sleep(3000);	
+		}
+		catch(Exception ex) {
+			t.log(LogStatus.FAIL, ex.getMessage());
+		}
 	}
 }

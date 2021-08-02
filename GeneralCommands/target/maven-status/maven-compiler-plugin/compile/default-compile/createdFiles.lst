@@ -1,3 +1,4 @@
+SeleniumCommands\AlertLocator.class
 SeleniumCommands\BrowserInit.class
 SeleniumCommands\FormLocator.class
 SeleniumCommands\ExcelFileHandler.class
