@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumCommands.BrowserTest">
+      <class name="SeleniumCommands.Grid_WidgetTesting">
         <methods>
-          <include name="LoadDetails"/>
-          <include name="CloseBrowser"/>
-          <include name="AlertForm"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="TestAccordion"/>
         </methods>
-      </class> <!-- SeleniumCommands.BrowserTest -->
+      </class> <!-- SeleniumCommands.Grid_WidgetTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

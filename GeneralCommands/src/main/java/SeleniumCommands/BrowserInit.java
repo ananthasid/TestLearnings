@@ -17,4 +17,10 @@ public void BrowserInitialize(String url) {
 	d.manage().window().maximize();
 }
 
+public void RemoteBrowserInit(WebDriver drive,String Url) {
+	d=drive;
+	d.navigate().to(Url);
+	//d.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	d.manage().window().maximize();
+}
 }

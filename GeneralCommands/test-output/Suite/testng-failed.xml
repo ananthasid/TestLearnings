@@ -6,9 +6,18 @@
       <class name="SeleniumCommands.BrowserTest">
         <methods>
           <include name="LoadDetails"/>
-          <include name="PracticeForm"/>
+          <include name="CloseBrowser"/>
+          <include name="TestFrames"/>
+          <include name="TestBrowserWindow"/>
         </methods>
       </class> <!-- SeleniumCommands.BrowserTest -->
+      <class name="SeleniumCommands.Grid_WidgetTesting">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="TestAccordion"/>
+        </methods>
+      </class> <!-- SeleniumCommands.Grid_WidgetTesting -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

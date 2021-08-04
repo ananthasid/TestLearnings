@@ -60,7 +60,7 @@ public class BrowserWindow {
 		driver.switchTo().window(parentId);
 		Thread.sleep(600);
 		TestnewWindow();
-		driver.close();
+		driver.quit();
 	}
 	
 	public void TestFrames() {

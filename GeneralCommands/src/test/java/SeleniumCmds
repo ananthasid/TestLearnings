@@ -4,6 +4,7 @@
   <test name="Test">
     <classes>
       <class name="SeleniumCommands.BrowserTest"/>
+      <class name="SeleniumCommands.Grid_WidgetTesting"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
